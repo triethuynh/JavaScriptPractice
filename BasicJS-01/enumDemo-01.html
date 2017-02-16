@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Enum Demo</title>
+    <!--
+    Ref. http://stackoverflow.com/questions/287903/enums-in-javascript
+    -->
+    <script>
+        // Defining the enum ColorEnum
+        var Colors = {
+            Red: 0,
+            Green: 1,
+            Blue: 2
+        };
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Emum Demo</h1>
+    </header>
+    <hr>
+    <div>Random number: </div><div id="randomNumber"></div>
+    <br/>
+    <div>Enum value: <div id="enumValue" /></div>
+
+    <script>
+        /*
+        * Generate a random number between 0 and 3 where 3 is "undefined"
+        * Then output the color based on the generated random number and the enum Colors, e.g.
+        * Random number: 0 => Color: Red
+        * Random number: 2 => Color: Green
+        */
+        var randomNumber = Math.floor(Math.random() * 4);
+        
+        var rne = document.querySelector("#randomNumber");
+        rne.innerHTML = randomNumber;
+        
+        var ee = document.querySelector("#enumValue");
+        
+        var colorValue = "It's ";
+        switch(randomNumber) {
+            case Colors.Red:
+                colorValue += "Red";
+                break;
+            case Colors.Green:
+                colorValue += "Green";
+                break;
+            case Colors.Blue:
+                colorValue += "Blue";
+                break;
+            default:
+                colorValue += "Undefined";
+        }
+                
+        ee.innerHTML = colorValue + ".";
+    </script>
+</body>
+</html>
